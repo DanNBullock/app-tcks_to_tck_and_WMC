@@ -52,7 +52,7 @@ outStatefulTractogram, wmc_Dict=wmaPyTools.streamlineTools.inputTcks_to_WMCandTC
 
 if not os.path.exists(os.path.join('tck')):
     os.makedirs(os.path.join('tck'))
-    save_tractogram(outStatefulTractogram,os.path.join('track.tck'), bbox_valid_check=False)
+save_tractogram(outStatefulTractogram,os.path.join('tck','track.tck'), bbox_valid_check=False)
 
 from scipy.io import savemat
 #save down the classification structure

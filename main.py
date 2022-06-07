@@ -59,6 +59,10 @@ from scipy.io import savemat
 if not os.path.exists(os.path.join('wmc')):
     os.makedirs(os.path.join('wmc'))
     #savemat acts weird
-savemat(os.path.join('wmc','classification.mat'),{ "classification": {"names": wmc_Dict['names'], "index": wmc_Dict['index'] }})
+    #REMEBER: numpy.array(list, dtype=numpy.object)
+savemat(os.path.join('wmc','classification.mat'),{ "classification": {"names": np.array(wmc_Dict['names'], dtype=np.object), "index": wmc_Dict['index'] }})
  
+
+print(wmc_Dict['names'])
+print(np.unique(wmc_Dict['index']))
 

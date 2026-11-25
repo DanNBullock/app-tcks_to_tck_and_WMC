@@ -3,6 +3,35 @@
 
 # [app name]
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Merges a folder of per-tract .tck files (tcks datatype) into a single .tck tractogram and a matching white matter classification (WMC) structure.**
+
+Collects every .tck file in the input, concatenates the streamlines with wma_pyTools and writes track.tck plus classification.mat, whose names come from the file names and whose index assigns each streamline to its source tract. Use it to convert segmentation outputs into the tck + WMC pair expected by many brainlife tract Apps. The README is an unfilled template.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/tcks` |
+| 📤 **Outputs** | `neuro/track/tck` · `neuro/wmc` |
+| 🐳 **Container** | `brainlife/dipy:latest` |
+| ⚙️ **Resources** | 16 CPUs |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.641](https://doi.org/10.25663/brainlife.app.641) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `tcks` | `neuro/tcks` | yes | Directory of per-tract .tck files (tcks datatype). |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `tck` | `neuro/track/tck` | Single tractogram (track.tck) with the streamlines of all input tracts. |
+| `wmc` | `neuro/wmc` | White matter classification (classification.mat) naming each tract and indexing its streamlines in track.tck. |
+
+<!-- brainlife-app:end -->
+
 ## Overview description
 
 This is where the description of the app goes.  Provide quick summaries of:
